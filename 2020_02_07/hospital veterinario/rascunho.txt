@@ -1,0 +1,39 @@
+[cliente]
+o id_cliente
+o nome_cliente
+o* telefone
+o* email
+o= endereco
+	o- cep
+	o- numero
+	o- rua
+	o- bairro
+	o- complemento
+
+[animal]
+o id_animal
+o nome_animal
+o especie
+o* enfermidade
+
+[consulta]
+o id_cosulta
+o data_hora
+o data_hora_retorno
+o* forma_de_pagamento
+
+o* id_veterinario
+o id_cliente
+o id_animal
+
+[veterinario]
+o id_veterinario
+o nome_veterinario
+o especialidade
+o* telefone
+o* email
+
+[cliente] n <possui> n [animal]
+[cliente] 1 <marca> n [consulta]
+[animal] 1 <pertence> n [consulta]
+[veterinario] n <atende> n [consulta]

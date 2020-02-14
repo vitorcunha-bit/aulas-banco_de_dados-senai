@@ -1,0 +1,30 @@
+[colaborador]
+o id_colaborador
+o nome
+o cargo
+o* email
+o* telefone
+o= endereco
+	o- cep
+	o- numero
+	o- rua
+	o- bairro
+	o- complemento
+
+[departamento]
+o id_departamento
+o tipo_de_departamento
+o quantidade_de_colaboradores
+o= localizacao
+	o* andar
+	o* sala
+	o* predio
+
+[projeto]
+o id_projeto
+o gerente_id
+o tipo_de_projeto
+
+[projeto](1,n)<participa>(1,n)(colaborador)
+[departamento](1,1)<pertence>(1,n)(colaborador)
+

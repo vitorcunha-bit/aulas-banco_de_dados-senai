@@ -1,0 +1,36 @@
+[assessor]
+o id_acessor
+o cpf
+o nome
+o= endereco
+	o rua
+	o bairro
+	o cep
+
+[cliente]
+o id_cliente
+o nome
+o* telefone
+o= endereco
+	o rua
+	o bairro
+	o cep
+
+[ação]
+o id_acao
+o codigo_de_negociacao
+o preco
+o rendimento
+o quantidade
+o nome
+
+[conta_corrente]
+o id_conta_corrente
+o= banco
+	o numero
+	o agencia
+	o saldo
+
+[cliente](0,n)<compra>(1,n)[ação]
+[cliente](1,1)<possui>(1,n)[conta_corrente]
+[cliente](1,n)<atende>(1,1)[acessor]
