@@ -1,4 +1,4 @@
-[cliente]
+[cliente].
 o id_cliente
 o nome_cliente
 o* telefone
